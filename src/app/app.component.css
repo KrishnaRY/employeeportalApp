@@ -1,0 +1,15 @@
+.app-header{
+    text-align:center;
+    background-image: url('../assets/images/employee-portal.jpg');
+    background-repeat: no-repeat;
+    height: 200px;
+     padding: 25px;
+    background-position: center top; 
+  
+}
+h1 {
+    text-shadow: 3px 3px #FF0000;
+}
+
+
+

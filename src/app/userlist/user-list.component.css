@@ -1,0 +1,15 @@
+thead {
+    color: #337AB7;
+}
+
+.left {
+    
+    float: left;
+    width: 20%;
+   
+}
+
+.right {
+    float: right;
+    width: 75%;
+}

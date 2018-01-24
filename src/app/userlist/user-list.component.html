@@ -1,0 +1,67 @@
+<div    >
+<app-adminnavigation></app-adminnavigation>
+</div>
+
+<div class="right">
+   <div class='panel panel-primary'>
+    <div class='panel-heading'>
+        {{pageTitle}}
+    </div>
+    <div class='panel-body'>
+        <div class='row'>
+            <div class='col-md-2'>Filter by:</div>
+            <div class='col-md-4'>
+                <input type='text' [(ngModel)]='listFilter' />
+            </div>
+        </div>
+        
+        <div class='table-responsive'>
+            <table class='table'
+                    *ngIf='users && users.length'>
+                <thead>
+                    <tr>
+                       
+                        <th>User Name</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                         <th>Action</th>
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let user of users'>
+                       
+                        <td>
+                                {{ user.username }}
+                           
+						</td>
+                       
+                        <td>{{ user.firstName }}</td>
+                        <td>{{ user.lastName }}</td>
+                         <td>    <button [disabled]="loading" class="btn " (click)='delete(user.id)'>Delete</button>
+                         <img *ngIf="loading" class="spinner" src="/assets/images/spinner.gif"/>   </td>
+                    </tr>
+                </tbody>
+            </table>
+
+             <div class="btn-toolbar" role="toolbar" style="margin: 0;">
+          <div class="btn-group">
+               <label style="margin-top:10px">Page {{currentIndex}}/{{pageNumber}}</label>
+            </div>
+            <div class="btn-group pull-right">
+               <ul class="pagination" >
+                  <li [ngClass]="{'disabled': (currentIndex == 1 || pageNumber == 0)}" ><a  (click)="prevPage()" >Prev</a></li>
+                     <li *ngFor="let page of pagesIndex"  [ngClass]="{'active': (currentIndex == page)}">
+                        <a (click)="setPage(page)"  >{{page}}</a>
+                     </li>
+                  <li [ngClass]="{'disabled': (currentIndex == pageNumber || pageNumber == 0)}" ><a   (click)="nextPage()" >Next</a></li>
+               </ul>
+            </div>
+         </div>
+        </div>
+    </div>
+</div>
+<div *ngIf='errorMessage' class='alert alert-danger'>
+    Error: {{ errorMessage }}
+</div>
+</div>

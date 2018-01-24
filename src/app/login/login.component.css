@@ -1,0 +1,23 @@
+.login-img{
+    background-image: url('/assets/images/login-img.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.signin-buttom{
+   
+    background-repeat: no-repeat;
+    background-attachment: auto;
+    width: 126px;
+    height: 55px;
+}
+.signup-buttom{
+    background-repeat: no-repeat;
+    background-attachment: auto;
+    width: 126px;
+    height: 60px;
+}
+.spinner{
+    width: 16px;
+    height: 44px;
+}
