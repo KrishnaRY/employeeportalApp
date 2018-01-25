@@ -1,0 +1,29 @@
+
+<div class="left">
+<div style="text-align:left">
+     <nav class='navbar navbar-default'>
+      <div *ngIf="userTypeAdmin" class='container-fluid'>
+         <ul class='nav navbar-nav'>
+     <li><a [routerLink]="['/signout']" class="btn btn-link">Sign Out</a></li>
+      <li><a [routerLink]="['/userlist/','admin']" class="btn btn-link">View Users</a></li>
+       <li><a [routerLink]="['/project']" class="btn btn-link">Sign Out</a></li>
+       <li><a [routerLink]="['/project']" class="btn btn-link">Sign Out</a></li>
+       <li><a [routerLink]="['/project']" class="btn btn-link">Sign Out</a></li>
+       <li><a [routerLink]="['/project']" class="btn btn-link">Sign Out</a></li>
+      </ul>
+      </div>
+      <div *ngIf="!userTypeAdmin" class='container-fluid'>
+         <ul class='nav navbar-nav'>
+     <li><a [routerLink]="['/signout']" class="btn btn-link">Sign Out</a></li>
+      <li><a [routerLink]="['/userprofile/',userId]" class="btn btn-link">My Profile</a></li>
+      
+      </ul>
+      </div>
+    </nav>
+
+</div>
+</div>  
+
+   
+ 
+

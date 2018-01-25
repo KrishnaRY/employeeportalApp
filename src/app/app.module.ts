@@ -11,14 +11,16 @@ import { RegisterService} from  './register/register.service';
 import { UserListService} from  './userlist/user-list.service';
 import { LoginService} from  './login/login.service';
 import { HttpModule } from '@angular/http';
-import { AdminnavigationComponent } from './adminnavigation/adminnavigation.component';
+import { NavigationComponent } from './leftpanelnavigation/navigation.component';
+import { UserprofileComponent } from './userprofile/userprofile.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
     UserListComponent,
-    AdminnavigationComponent
+    NavigationComponent,
+    UserprofileComponent
   ],
    schemas: [
     CUSTOM_ELEMENTS_SCHEMA
@@ -34,3 +36,4 @@ import { AdminnavigationComponent } from './adminnavigation/adminnavigation.comp
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

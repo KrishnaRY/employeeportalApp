@@ -17,7 +17,7 @@ export class LoginService {
           let cpHeaders = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: cpHeaders });
     return this._http.post(AppSettings.API_ENDPOINT +"/userLogin", user, options)
-           .map(success => success.status)
+           .map(success => success)
            .catch(this.handleError);
     
 
