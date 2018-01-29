@@ -13,6 +13,8 @@ import { LoginService} from  './login/login.service';
 import { HttpModule } from '@angular/http';
 import { NavigationComponent } from './leftpanelnavigation/navigation.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
+import { UserProfileService} from  './userprofile/userprofile.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,7 @@ import { UserprofileComponent } from './userprofile/userprofile.component';
     ReactiveFormsModule,
     HttpModule
   ],
-  providers: [RegisterService,UserListService,LoginService],
+  providers: [RegisterService,UserListService,LoginService,UserProfileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

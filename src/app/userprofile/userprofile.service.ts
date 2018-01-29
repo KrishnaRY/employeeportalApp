@@ -8,25 +8,17 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
 @Injectable()
-export class UserListService {
+export class UserProfileService {
 
   constructor(private _http: Http) { }
 
   
 
-   getUsers(): Observable<RegisterUser[]> {
-        return this._http.get(AppSettings.API_ENDPOINT+"/users")
+getUser(userId:string): Observable<RegisterUser[]> {
+        return this._http.get(AppSettings.API_ENDPOINT+"/getUser/"+userId)
             .map(this.extractData)
             .catch(this.handleError);
     }
-
- deleteUser(user_ID): Observable<Response> {
-    
-      
-             return this._http.delete(AppSettings.API_ENDPOINT+"/delete/"+user_ID)
-             .catch(this.handleError);
-    }
-
 private handleError(err: Response | any) {
   let errorMessage = '';
  if (err.error instanceof Error) {
@@ -40,8 +32,20 @@ private handleError(err: Response | any) {
        
        return Observable.throw(errorMessage);
     }
+
+     updateUser(registerUser:RegisterUser){
+  
+          let cpHeaders = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: cpHeaders });
+    return this._http.post(AppSettings.API_ENDPOINT +"/updateUser", registerUser, options)
+           .map(success => success.status)
+           .catch(this.handleError);
+    
+
+  }
     private extractData(res: Response) {
 	let body = res.json();
+    console.log(body);
         return body;
     }
 }

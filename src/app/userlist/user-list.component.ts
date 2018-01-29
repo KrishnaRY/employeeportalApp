@@ -116,9 +116,14 @@ export class UserListComponent implements OnInit {
          this.currentIndex = index;
          this.refreshItems();
     }
-delete(id:number){
+delete(id){
     this.loading=true;
-   // alert(id);
+    this.userListService.deleteUser(id) .subscribe(response => {
+             // this.router.navigate(['/user']); 
+                   this.refreshData();       
+            },
+                error => this.errorMessage = <any>error);
+         
      this.loading=false;
 }
 
